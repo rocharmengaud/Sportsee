@@ -12,8 +12,8 @@ export default function Home() {
 
   const { id } = useParams();
 
-  // ici l'id est une constante a récuperer avec le useParams au dessus
   // le useEffect va
+  // ici l'id est une constante a récuperer avec le useParams au dessus
   React.useEffect(() => {
     getUserData(id).then((data) => setUserData(data));
   }, [id]);
