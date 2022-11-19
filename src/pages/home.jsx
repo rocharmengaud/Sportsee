@@ -7,6 +7,9 @@ import Navbar from '../components/navbar';
 import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
 import Sidebar from '../components/sidebar';
+import HealthStats from '../components/healthStats';
+
+import FireIcon from '../assets/fire-icon.png';
 
 import '../styles/home.css';
 
@@ -32,6 +35,7 @@ export default function Home() {
           <div className="home-container">
             <Profile firstName={userData.userInfos.firstName} />
           </div>
+          <HealthStats imgSrc={FireIcon} />
         </div>
       ) : (
         <Loader />
