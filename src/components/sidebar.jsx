@@ -10,7 +10,7 @@ import '../styles/sidebar.css';
 export default function Sidebar() {
   return (
     <nav className="sidebar-container">
-      <div className="sidebar-items">
+      <div className="sidebar-icons">
         <div className="zen-icon">
           <ZenIcon />
         </div>
@@ -24,6 +24,7 @@ export default function Sidebar() {
           <WeightIcon />
         </div>
       </div>
+      <div className="sidebar-copyright">Copyright, SportSee 2020</div>
     </nav>
   );
 }

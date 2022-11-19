@@ -8,6 +8,8 @@ import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
 import Sidebar from '../components/sidebar';
 
+import '../styles/home.css';
+
 export default function Home() {
   const [userData, setUserData] = useState();
 
@@ -23,11 +25,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Sidebar />
       {/* on demande si userData est defined avec un ternaire*/}
       {userData ? (
         <div className="home-content">
-          <Profile firstName={userData.userInfos.firstName} />
+          <Sidebar />
+          <div className="home-container">
+            <Profile firstName={userData.userInfos.firstName} />
+          </div>
         </div>
       ) : (
         <Loader />
