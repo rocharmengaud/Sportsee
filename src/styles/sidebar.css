@@ -1,0 +1,13 @@
+.sidebar-container {
+  background-color: black;
+  min-height: 100vh;
+  width: 117px;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}

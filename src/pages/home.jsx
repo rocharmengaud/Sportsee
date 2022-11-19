@@ -6,6 +6,7 @@ import Navbar from '../components/navbar';
 // mettre curly navbar
 import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
+import Sidebar from '../components/sidebar';
 
 export default function Home() {
   const [userData, setUserData] = useState();
@@ -22,7 +23,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* on demande si userData est defined */}
+      <Sidebar />
+      {/* on demande si userData est defined avec un ternaire*/}
       {userData ? (
         <div className="home-content">
           <Profile firstName={userData.userInfos.firstName} />
