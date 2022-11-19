@@ -4,9 +4,14 @@ import '../styles/profile.css';
 
 export const Profile = (props) => {
   return (
-    <div className="profile">
-      <div className="profile-name">{'Bonjour ' + props.firstName}</div>
-      <span>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
-    </div>
+    <>
+      <div className="profile-container">
+        <div className="profile">
+          <span>Bonjour</span>
+          <div className="profile-name">{props.firstName}</div>
+        </div>
+        <div className="profile-cheer">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
+      </div>
+    </>
   );
 };
