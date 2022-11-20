@@ -1,15 +1,28 @@
 import React from 'react';
+import { FireIcon } from '../assets/FireIcon';
+import { HealthStat } from '../components/healthStat';
 
-export default function HealthStats(props) {
-  return (
-    <div className="stats-container">
-      <div className="stats-icon">
-        <img className="icon" src={props.imgSrc} alt=""></img>
-        <div className="stats-info">
-          <div className="stats-value"></div>
-          <div className="stats-name"></div>
-        </div>
-      </div>
-    </div>
-  );
-}
+export const HealthStats = (props) => {
+  const healthStats = [
+    {
+      value: props.keyData.calorieCount,
+      label: 'Calories',
+      icon: <FireIcon />,
+    },
+    {
+      value: props.keyData.proteinCount,
+      label: 'Proteines',
+    },
+    {
+      value: props.keyData.carbohydrateCount,
+      label: 'Glucides',
+    },
+    {
+      value: props.keyData.lipidCount,
+      label: 'Lipides',
+    },
+  ];
+  return healthStats.map((healthStat, index) => {
+    return <HealthStat value={healthStat.value} label={healthStat.label} icon={healthStat.icon} key={index} />;
+  });
+};

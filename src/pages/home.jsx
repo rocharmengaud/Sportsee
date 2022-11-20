@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserData } from '../services/apidata';
+import { getUserData, getUserActivity } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
@@ -7,23 +7,27 @@ import Navbar from '../components/navbar';
 import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
 import Sidebar from '../components/sidebar';
-import HealthStats from '../components/healthStats';
-
-import FireIcon from '../assets/fire-icon.png';
 
 import '../styles/home.css';
+import { HealthStats } from '../components/healthStats';
 
 export default function Home() {
   const [userData, setUserData] = useState();
 
+  const [userActivity, setUserActivity] = useState();
+
   const { id } = useParams();
 
-  // le useEffect va
+  // le useEffect est un callback qui va s'executer lorsque le(s) second(s) parametre(s) changent de valeur (ici [id])
   // ici l'id est une constante a récuperer avec le useParams au dessus
+  // ici le useEffect sert a aller chercher les données de mon apidata
   React.useEffect(() => {
     getUserData(id).then((data) => setUserData(data));
+    getUserActivity(id).then((data) => setUserActivity(data));
   }, [id]);
+
   console.log(userData);
+  console.log(userActivity);
 
   return (
     <>
@@ -35,7 +39,7 @@ export default function Home() {
           <div className="home-container">
             <Profile firstName={userData.userInfos.firstName} />
           </div>
-          <HealthStats imgSrc={FireIcon} />
+          <HealthStats keyData={userData.keyData} />
         </div>
       ) : (
         <Loader />
