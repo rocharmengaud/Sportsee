@@ -30,7 +30,8 @@ export const HealthStats = (props) => {
     },
   ];
   return healthStats.map((healthStat, index) => {
-    return index === 0 ? (
+    console.log(healthStat.label);
+    return healthStat.label === 'Calories' ? (
       <HealthStat value={healthStat.value + ' kCal'} label={healthStat.label} icon={healthStat.icon} key={index} />
     ) : (
       <HealthStat value={healthStat.value + ' g'} label={healthStat.label} icon={healthStat.icon} key={index} />
