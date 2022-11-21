@@ -39,7 +39,9 @@ export default function Home() {
           <div className="home-container">
             <Profile firstName={userData.userInfos.firstName} />
           </div>
-          <HealthStats keyData={userData.keyData} />
+          <div className="healthstats-container">
+            <HealthStats keyData={userData.keyData} />
+          </div>
         </div>
       ) : (
         <Loader />

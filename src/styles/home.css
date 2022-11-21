@@ -5,3 +5,8 @@
 .home-container {
   padding: 3rem 0 0 5rem;
 }
+
+.healthstats-container {
+  display: flex;
+  flex-direction: column;
+}
