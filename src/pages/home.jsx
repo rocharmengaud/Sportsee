@@ -39,8 +39,8 @@ export default function Home() {
           <Sidebar />
           <div className="home-container">
             <Profile firstName={userData.userInfos.firstName} />
+            <DailyActivity sessions={userActivity.sessions} />
           </div>
-          <DailyActivity sessions={userActivity.sessions} />
           <div className="healthstats-container">
             <HealthStats keyData={userData.keyData} />
           </div>
