@@ -33,13 +33,15 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Sidebar />
       {/* on demande si userData est defined avec un ternaire*/}
       {userData && userActivity ? (
-        <div className="home-content">
-          <Sidebar />
-          <div className="home-container">
+        <div className="home-container">
+          <div className="home-items">
             <Profile firstName={userData.userInfos.firstName} />
-            <DailyActivity sessions={userActivity.sessions} />
+            <div className="allstats-container">
+              <DailyActivity sessions={userActivity.sessions} />
+            </div>
           </div>
           <div className="healthstats-container">
             <HealthStats keyData={userData.keyData} />

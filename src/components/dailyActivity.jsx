@@ -2,6 +2,7 @@ import React from 'react';
 import { BarChart, CartesianGrid, XAxis, YAxis, Bar, Legend, Tooltip } from 'recharts';
 
 export const DailyActivity = (props) => {
+  // Ici les props seront les clés de la classe ({activity, stats})
   return (
     <BarChart width={730} height={250} data={props.sessions}>
       <CartesianGrid strokeDasharray="3 3" />
@@ -14,3 +15,12 @@ export const DailyActivity = (props) => {
     </BarChart>
   );
 };
+
+// CustomTooltip.propTypes = {
+//   sessions: PropTypes.object,
+// }
+
+// Utilisation des propTypes
+// DailyActivity.propTypes = {
+//   name: PropTypes.string,
+// };
