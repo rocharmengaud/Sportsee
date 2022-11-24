@@ -1,6 +1,6 @@
 // class User {
 //   constructor(userActivity, todayScore, keyData) {
-//     this.lenomqu'onveut = userActivity;
+//     this.userActivity = userActivity;
 //     this.todayScore = todayScore;
 //     this.keyData = keyData;
 //   }
