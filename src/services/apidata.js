@@ -1,18 +1,27 @@
-// class User {
-//   constructor(userActivity, todayScore, keyData) {
-//     this.userActivity = userActivity;
-//     this.todayScore = todayScore;
-//     this.keyData = keyData;
-//   }
-// }
+class UserData {
+  constructor(userInfos, todayScore, keyData) {
+    this.userInfos = userInfos;
+    this.todayScore = todayScore;
+    this.keyData = keyData;
+  }
+  getUserInfos() {
+    return this.userInfos;
+  }
+  getTodayScore() {
+    return this.todayScore;
+  }
+  getKeyData() {
+    return this.keyData;
+  }
+}
 
 export const getUserData = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
   const response = await fetch(`http://localhost:3001/user/${id}`);
   const { data } = await response.json();
   // ici il faut retourner une classe
-  // return new User(data.userActivity, data.todayScore, data.keyData);
-  return data;
+  return new UserData(data.userInfos, data.todayScore, data.keyData);
+  // return data;
 };
 
 export const getUserActivity = async (id) => {
