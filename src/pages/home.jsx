@@ -7,7 +7,7 @@ import Navbar from '../components/navbar';
 import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
 import { HealthStats } from '../components/healthStats';
-import { DailyActivity } from '../components/dailyActivity';
+import { BarStats } from '../components/barStats';
 import Sidebar from '../components/sidebar';
 
 import '../styles/home.css';
@@ -40,7 +40,7 @@ export default function Home() {
           <div className="home-items">
             <Profile firstName={userData.userInfos.firstName} />
             <div className="allstats-container">
-              <DailyActivity sessions={userActivity.sessions} />
+              <BarStats sessions={userActivity.sessions} />
             </div>
           </div>
           <div className="healthstats-container">
