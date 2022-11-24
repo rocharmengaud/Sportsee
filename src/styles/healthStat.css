@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  border: 1px solid lightgray;
+  border: 1px solid #fbfbfb;
   border-radius: 6px;
   width: 258px;
   height: 124px;
-  background-color: lightgray;
+  background-color: #fbfbfb;
 }
 
 .stats-info {
@@ -26,6 +26,7 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  border: 1px solid black;
+  border: 1px solid #fbfbfb;
   border-radius: 6px;
+  background-color: #fbeaea;
 }

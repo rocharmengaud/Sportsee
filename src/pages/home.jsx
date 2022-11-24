@@ -41,10 +41,10 @@ export default function Home() {
             <Profile firstName={userData.userInfos.firstName} />
             <div className="allstats-container">
               <BarStats sessions={userActivity.sessions} />
+              <div className="healthstats-container">
+                <HealthStats keyData={userData.keyData} />
+              </div>
             </div>
-          </div>
-          <div className="healthstats-container">
-            <HealthStats keyData={userData.keyData} />
           </div>
         </div>
       ) : (

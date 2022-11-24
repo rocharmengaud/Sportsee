@@ -11,7 +11,7 @@ export const getUserData = async (id) => {
   const response = await fetch(`http://localhost:3001/user/${id}`);
   const { data } = await response.json();
   // ici il faut retourner une classe
-  // return new User(data.userInfos, data.score, data.keyData);
+  // return new User(data.userActivity, data.todayScore, data.keyData);
   return data;
 };
 

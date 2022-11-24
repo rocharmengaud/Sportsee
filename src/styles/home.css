@@ -1,5 +1,6 @@
 .home-container {
   display: flex;
+  gap: 3rem;
   position: relative;
   left: 120px;
 }
@@ -13,13 +14,11 @@
 
 .allstats-container {
   display: flex;
-  gap: 2rem;
 }
 
 .healthstats-container {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   align-items: flex-end;
   gap: 3rem;
 }
