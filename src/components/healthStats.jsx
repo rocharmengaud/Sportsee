@@ -7,6 +7,7 @@ import { BurgerIcon } from '../assets/burgerIcon';
 
 import { HealthStat } from '../components/healthStat';
 export const HealthStats = (props) => {
+  console.log(props);
   const healthStats = [
     {
       value: props.keyData.calorieCount,

@@ -40,8 +40,10 @@ export default function Home() {
           <div className="home-items">
             <Profile firstName={userData.getUserInfos().firstName} />
             <div className="allstats-container">
-              <BarStats sessions={userActivity.sessions} />
-              <div className="healthstats-container">{/* <HealthStats keyData={userData.keyData} /> */}</div>
+              <BarStats sessions={userActivity.getSessions()} />
+              <div className="healthstats-container">
+                <HealthStats keyData={userData.getKeyData()} />
+              </div>
             </div>
           </div>
         </div>

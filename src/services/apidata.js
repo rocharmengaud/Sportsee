@@ -24,11 +24,21 @@ export const getUserData = async (id) => {
   // return data;
 };
 
+class UserActivity {
+  constructor(sessions) {
+    this.sessions = sessions;
+  }
+  getSessions() {
+    return this.sessions;
+  }
+}
+
 export const getUserActivity = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
   const response = await fetch(`http://localhost:3001/user/${id}/activity`);
   const { data } = await response.json();
-  return data;
+  return new UserActivity(data.sessions);
+  // return data;
 };
 
 export const getUserSessions = async (id) => {
