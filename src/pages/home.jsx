@@ -17,6 +17,7 @@ export default function Home() {
   const [userData, setUserData] = useState();
   const [userActivity, setUserActivity] = useState();
   const [userSessions, setUserSessions] = useState();
+  // const [userPerformance, setuserPerformance] = useState();
 
   const { id } = useParams();
 
@@ -27,6 +28,7 @@ export default function Home() {
     getUserData(id).then((data) => setUserData(data));
     getUserActivity(id).then((data) => setUserActivity(data));
     getUserSessions(id).then((data) => setUserSessions(data));
+    // getUserPerformance(id).then((data) => setUserPerformance(data));
   }, [id]);
 
   console.log(userData);

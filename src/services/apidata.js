@@ -58,9 +58,19 @@ export const getUserSessions = async (id) => {
   // return data;
 };
 
+// class UserPerformance {
+//   constructor(sessions) {
+//     this.sessions = sessions;
+//   }
+//   getPerfomance() {
+//     return this.sessions;
+//   }
+// }
+
 export const getUserPerformance = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
   const response = await fetch(`http://localhost:3001/user/${id}/performance`);
   const { data } = await response.json();
+  // return new UserPerformance(data.sessions);
   return data;
 };
