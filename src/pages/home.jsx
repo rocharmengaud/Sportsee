@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserData, getUserActivity } from '../services/apidata';
+import { getUserData, getUserActivity, getUserSessions } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
@@ -8,14 +8,15 @@ import { Loader } from '../components/loader';
 import { Profile } from '../components/profile';
 import { HealthStats } from '../components/healthStats';
 import { BarStats } from '../components/barStats';
+import { LineStats } from '../components/lineStats';
 import Sidebar from '../components/sidebar';
 
 import '../styles/home.css';
 
 export default function Home() {
   const [userData, setUserData] = useState();
-
   const [userActivity, setUserActivity] = useState();
+  const [userSessions, setUserSessions] = useState();
 
   const { id } = useParams();
 
@@ -25,10 +26,12 @@ export default function Home() {
   React.useEffect(() => {
     getUserData(id).then((data) => setUserData(data));
     getUserActivity(id).then((data) => setUserActivity(data));
+    getUserSessions(id).then((data) => setUserSessions(data));
   }, [id]);
 
   console.log(userData);
   console.log(userActivity);
+  console.log(userSessions);
 
   return (
     <>
@@ -40,9 +43,14 @@ export default function Home() {
           <div className="home-items">
             <Profile firstName={userData.getUserInfos().firstName} />
             <div className="allstats-container">
-              <BarStats sessions={userActivity.getSessions()} />
-              <div className="healthstats-container">
-                <HealthStats keyData={userData.getKeyData()} />
+              <div className="barstats">
+                <BarStats sessions={userActivity.getSessions()} />
+                <div className="healthstats-container">
+                  <HealthStats keyData={userData.getKeyData()} />
+                </div>
+              </div>
+              <div className="triplestats-container">
+                <LineStats sessions={userSessions.getSessions()} />
               </div>
             </div>
           </div>

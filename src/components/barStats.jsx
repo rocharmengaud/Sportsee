@@ -4,7 +4,6 @@ import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar
 import '../styles/barStats.css';
 
 export const BarStats = (props) => {
-  // Ici les props seront les clés de la classe ({activity, stats})
   return (
     <div className="barstats-container">
       <ResponsiveContainer width={835} height={320}>

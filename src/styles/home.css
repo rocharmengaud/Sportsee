@@ -12,7 +12,7 @@
   gap: 4rem;
 }
 
-.allstats-container {
+.barstats {
   display: flex;
   gap: 3rem;
 }
@@ -22,4 +22,8 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 3rem;
+}
+
+.barstats {
+  display: flex;
 }
