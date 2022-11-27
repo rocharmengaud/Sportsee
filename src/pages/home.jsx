@@ -13,6 +13,7 @@ import Sidebar from '../components/sidebar';
 
 import '../styles/home.css';
 import { RadarStats } from '../components/radarStats';
+import { RadialStats } from '../components/radialStats';
 
 export default function Home() {
   const [userData, setUserData] = useState();
@@ -53,6 +54,7 @@ export default function Home() {
                   <div className="triplestats-container">
                     <LineStats sessions={userSessions.getSessions()} />
                     <RadarStats data={userPerformance.getData()} />
+                    <RadialStats score={userData.getTodayScore()} />
                   </div>
                 </div>
                 <div className="healthstats-container">

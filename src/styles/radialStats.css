@@ -1,0 +1,50 @@
+.radialchart {
+  width: 100%;
+  height: 263px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  position: relative;
+  min-width: 210px;
+}
+
+.radialchart:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.radialchart__title {
+  margin: 0;
+  padding: 2rem 0 0 1rem;
+  position: absolute;
+  color: #20253a;
+}
+
+.radialchart__bloc-score {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radialchart__score {
+  color: #282d30;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  margin: 0;
+}
+
+.radialchart__text {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+  color: #74798c;
+}

@@ -2,6 +2,14 @@ import React from 'react';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 
 export const RadarStats = (props) => {
+  const label = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
+
+  const data = props.data.map((data, index) => ({
+    label: label[index],
+    value: data.value,
+  }));
+
+  console.log(data.value);
   return (
     <div className="radarchart">
       <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
@@ -9,11 +17,11 @@ export const RadarStats = (props) => {
           style={{ background: 'black', borderRadius: '10px' }}
           margin={{ top: 0, right: 0, bottom: 10, left: 0 }}
           outerRadius={75}
-          data={props.data}
+          data={data}
         >
           <PolarGrid />
           <PolarAngleAxis
-            dataKey="kind"
+            dataKey="label"
             orient={30}
             style={{ color: '#fff' }}
             stroke={'#fff'}
