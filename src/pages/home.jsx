@@ -48,14 +48,16 @@ export default function Home() {
             <Profile firstName={userData.getUserInfos().firstName} />
             <div className="allstats-container">
               <div className="barstats">
-                <BarStats sessions={userActivity.getSessions()} />
+                <div className="changename">
+                  <BarStats sessions={userActivity.getSessions()} />
+                  <div className="triplestats-container">
+                    <LineStats sessions={userSessions.getSessions()} />
+                    <RadarStats data={userPerformance.getData()} />
+                  </div>
+                </div>
                 <div className="healthstats-container">
                   <HealthStats keyData={userData.getKeyData()} />
                 </div>
-              </div>
-              <div className="triplestats-container">
-                {<LineStats sessions={userSessions.getSessions()} />}
-                <RadarStats data={userPerformance.getData()} />
               </div>
             </div>
           </div>

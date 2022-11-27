@@ -4,13 +4,20 @@ import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar
 import '../styles/barStats.css';
 
 export const BarStats = (props) => {
+  const data = props.sessions.map((session, index) => ({
+    id: index + 1,
+    kilogram: session.kilogram,
+    calories: session.calories,
+    // ...session,
+  }));
+
   return (
     <div className="barstats-container">
       <ResponsiveContainer width={835} height={320}>
         <BarChart
           width={60}
           height={300}
-          data={props.sessions}
+          data={data}
           margin={{
             top: 0,
             right: 0,
@@ -19,8 +26,11 @@ export const BarStats = (props) => {
           }}
           barGap={6}
         >
+          <text x={100} y={20} className="barchart-title" fill="black" textAnchor="middle" dominantBaseline="central">
+            <tspan fontSize="14">Activité quotidienne</tspan>
+          </text>
           <CartesianGrid strokeDasharray="3" vertical={false} />
-          <XAxis dataKey="day" domain={['dataMin + 1', 'dataMax + 1']} tickLine={false} dy={10} tickCount="7" />
+          <XAxis dataKey="id" domain={['dataMin + 1', 'dataMax + 1']} tickLine={false} dy={10} tickCount="7" />
           <YAxis orientation="right" interval={'preserveStartEnd'} axisLine={false} allowDecimals={false} dataKey="calories" />
           <Legend
             height={70}

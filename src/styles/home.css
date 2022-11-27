@@ -28,3 +28,8 @@
   display: flex;
   gap: 3rem;
 }
+
+.changename {
+  display: flex;
+  flex-direction: column;
+}
