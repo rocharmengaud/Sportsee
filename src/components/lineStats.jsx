@@ -1,8 +1,6 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Line } from 'recharts';
 
-// import '../styles/barStats.css';
-
 export const LineStats = (props) => {
   return (
     <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>

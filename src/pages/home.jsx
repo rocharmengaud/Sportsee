@@ -12,6 +12,7 @@ import { LineStats } from '../components/lineStats';
 import Sidebar from '../components/sidebar';
 
 import '../styles/home.css';
+import { RadarStats } from '../components/radarStats';
 
 export default function Home() {
   const [userData, setUserData] = useState();
@@ -52,7 +53,10 @@ export default function Home() {
                   <HealthStats keyData={userData.getKeyData()} />
                 </div>
               </div>
-              <div className="triplestats-container">{<LineStats sessions={userSessions.getSessions()} />}</div>
+              <div className="triplestats-container">
+                {<LineStats sessions={userSessions.getSessions()} />}
+                <RadarStats data={userPerformance.getData()} />
+              </div>
             </div>
           </div>
         </div>
