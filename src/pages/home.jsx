@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserData, getUserActivity, getUserSessions } from '../services/apidata';
+import { getUserData, getUserActivity, getUserSessions, getUserPerformance } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
@@ -17,7 +17,7 @@ export default function Home() {
   const [userData, setUserData] = useState();
   const [userActivity, setUserActivity] = useState();
   const [userSessions, setUserSessions] = useState();
-  // const [userPerformance, setuserPerformance] = useState();
+  const [userPerformance, setUserPerformance] = useState();
 
   const { id } = useParams();
 
@@ -28,19 +28,20 @@ export default function Home() {
     getUserData(id).then((data) => setUserData(data));
     getUserActivity(id).then((data) => setUserActivity(data));
     getUserSessions(id).then((data) => setUserSessions(data));
-    // getUserPerformance(id).then((data) => setUserPerformance(data));
+    getUserPerformance(id).then((data) => setUserPerformance(data));
   }, [id]);
 
   console.log(userData);
-  console.log(userActivity);
   console.log(userSessions);
+  console.log(userActivity);
+  console.log(userPerformance);
 
   return (
     <>
       <Navbar />
       <Sidebar />
-      {/* on demande si userData est defined avec un ternaire*/}
-      {userData && userActivity ? (
+      {/* on demande si les data sont defined avec un ternaire*/}
+      {userData && userActivity && userSessions && userPerformance ? (
         <div className="home-container">
           <div className="home-items">
             <Profile firstName={userData.getUserInfos().firstName} />
@@ -51,9 +52,7 @@ export default function Home() {
                   <HealthStats keyData={userData.getKeyData()} />
                 </div>
               </div>
-              <div className="triplestats-container">
-                <LineStats sessions={userSessions.getSessions()} />
-              </div>
+              <div className="triplestats-container">{<LineStats sessions={userSessions.getSessions()} />}</div>
             </div>
           </div>
         </div>
