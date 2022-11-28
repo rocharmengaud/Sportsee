@@ -5,6 +5,7 @@ import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar
 import '../styles/barStats.css';
 
 export const BarStats = (props) => {
+  console.log(props);
   const data = props.sessions.map((session, index) => ({
     id: index + 1,
     kilogram: session.kilogram,
@@ -59,9 +60,9 @@ export const BarStats = (props) => {
 BarStats.propTypes = {
   sessions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      kilogram: PropTypes.number,
-      calories: PropTypes.number,
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
     })
   ),
 };

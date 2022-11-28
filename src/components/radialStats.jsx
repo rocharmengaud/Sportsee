@@ -8,6 +8,7 @@ export const RadialStats = (props) => {
   const data = [
     {
       score: props.score,
+      todayScore: props.todayScore,
       fill: '#E60000',
     },
   ];

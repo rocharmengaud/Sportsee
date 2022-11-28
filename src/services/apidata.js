@@ -1,6 +1,7 @@
 class UserData {
-  constructor(userInfos, todayScore, keyData) {
+  constructor(userInfos, score, todayScore, keyData) {
     this.userInfos = userInfos;
+    this.score = score;
     this.todayScore = todayScore;
     this.keyData = keyData;
   }
@@ -8,7 +9,7 @@ class UserData {
     return this.userInfos;
   }
   getTodayScore() {
-    return this.todayScore;
+    return this.score ?? this.todayScore;
   }
   getKeyData() {
     return this.keyData;
@@ -20,7 +21,7 @@ export const getUserData = async (id) => {
   const response = await fetch(`http://localhost:3001/user/${id}`);
   const { data } = await response.json();
   // ici il faut retourner une classe
-  return new UserData(data.userInfos, data.todayScore, data.keyData);
+  return new UserData(data.userInfos, data.score, data.todayScore, data.keyData);
   // return data;
 };
 
