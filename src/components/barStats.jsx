@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar } from 'recharts';
 
 import '../styles/barStats.css';
@@ -55,6 +56,12 @@ export const BarStats = (props) => {
 // }
 
 // Utilisation des propTypes
-// DailyActivity.propTypes = {
-//   name: PropTypes.string,
-// };
+BarStats.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    })
+  ),
+};
