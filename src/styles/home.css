@@ -24,12 +24,13 @@
   gap: 2rem;
 }
 
-.barstats {
+.charts-container {
   display: flex;
   gap: 3rem;
 }
 
-.changename {
+.charts {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
