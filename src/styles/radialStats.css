@@ -7,20 +7,18 @@
   min-width: 210px;
 }
 
-.radialchart:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
 .radialchart__title {
   margin: 0;
-  padding: 2rem 0 0 1rem;
+  padding: 1rem 0 0 1rem;
   position: absolute;
   color: #20253a;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .radialchart__bloc-score {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background: #fff;
   position: absolute;

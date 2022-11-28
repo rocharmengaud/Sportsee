@@ -26,8 +26,10 @@ export const BarStats = (props) => {
           }}
           barGap={6}
         >
-          <text x={100} y={20} className="barchart-title" fill="black" textAnchor="middle" dominantBaseline="central">
-            <tspan fontSize="14">Activité quotidienne</tspan>
+          <text x={100} y={20} fill="black" textAnchor="middle" dominantBaseline="central">
+            <tspan fontSize="16" fontWeight={800}>
+              Activité quotidienne
+            </tspan>
           </text>
           <CartesianGrid strokeDasharray="3" vertical={false} />
           <XAxis dataKey="id" domain={['dataMin + 1', 'dataMax + 1']} tickLine={false} dy={10} tickCount="7" />

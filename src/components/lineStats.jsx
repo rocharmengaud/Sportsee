@@ -12,6 +12,11 @@ export const LineStats = (props) => {
   return (
     <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
       <LineChart data={data} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
+        <text x={120} y={30} fill="black" textAnchor="middle" dominantBaseline="central">
+          <tspan fontSize="16" fontWeight={800}>
+            Durée moyenne des sessions
+          </tspan>
+        </text>
         <Line
           type="natural"
           dataKey="sessionLength"

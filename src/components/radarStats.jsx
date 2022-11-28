@@ -20,16 +20,7 @@ export const RadarStats = (props) => {
           data={data}
         >
           <PolarGrid />
-          <PolarAngleAxis
-            dataKey="label"
-            orient={30}
-            style={{ color: '#fff' }}
-            stroke={'#fff'}
-            tickLine={false}
-            radius={10}
-            fontSize={12}
-            strokeWidth={1}
-          />
+          <PolarAngleAxis dataKey="label" style={{ color: '#fff' }} stroke={'#fff'} tickLine={false} radius={10} fontSize={12} strokeWidth={1} />
           <Radar dataKey="value" stroke="red" fill="red" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
