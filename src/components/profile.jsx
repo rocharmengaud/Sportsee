@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../styles/profile.css';
 
 export const Profile = (props) => {
+  console.log(props);
   return (
     <>
       <div className="profile-container">
@@ -14,4 +16,8 @@ export const Profile = (props) => {
       </div>
     </>
   );
+};
+
+Profile.propTypes = {
+  firstName: PropTypes.string.isRequired,
 };

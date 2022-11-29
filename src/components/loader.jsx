@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Loader = (props) => {
+export const Loader = () => {
   return <div>Fetching data</div>;
 };

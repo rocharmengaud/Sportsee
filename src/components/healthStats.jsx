@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 import { ChickenIcon } from '../assets/chickenIcon';
 import { FireIcon } from '../assets/FireIcon';
@@ -38,3 +39,14 @@ export const HealthStats = (props) => {
     );
   });
 };
+
+// HealthStats.propTypes = {
+//   keyData: PropTypes.objectOf(
+//     PropTypes.shape({
+//       calorieCount: PropTypes.number.isRequired,
+//       carbohydrateCount: PropTypes.number.isRequired,
+//       lipidCount: PropTypes.number.isRequired,
+//       proteinCount: PropTypes.number.isRequired,
+//     })
+//   ),
+// };
