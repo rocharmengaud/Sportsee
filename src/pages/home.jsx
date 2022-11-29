@@ -15,6 +15,12 @@ import '../styles/home.css';
 import { RadarStats } from '../components/radarStats';
 import { RadialStats } from '../components/radialStats';
 
+/**
+ * Function that displays all the informations of the user and his associated ID in the home page
+ *
+ * @return {React.ReactElement} A React component.
+ */
+
 export default function Home() {
   const [userData, setUserData] = useState();
   const [userActivity, setUserActivity] = useState();
