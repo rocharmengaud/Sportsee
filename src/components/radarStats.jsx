@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 
 export const RadarStats = (props) => {
+  console.log(props);
   const label = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
 
   const data = props.data.map((data, index) => ({
@@ -26,4 +28,13 @@ export const RadarStats = (props) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+RadarStats.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      kind: PropTypes.number.isRequired,
+    })
+  ),
 };

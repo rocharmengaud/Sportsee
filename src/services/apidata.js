@@ -9,6 +9,9 @@ class UserData {
     return this.userInfos;
   }
   getTodayScore() {
+    // si this.score est defined, ça le return, sinon ça return this.todayScore
+    // utilisé pour le radialStats.jsx
+    // ne pas confondre avec ternaire
     return this.score ?? this.todayScore;
   }
   getKeyData() {

@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Line } from 'recharts';
 
 export const LineStats = (props) => {
+  console.log(props);
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
   const data = props.sessions.map((session, index) => ({
@@ -31,4 +33,13 @@ export const LineStats = (props) => {
       </LineChart>
     </ResponsiveContainer>
   );
+};
+
+LineStats.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    })
+  ),
 };
