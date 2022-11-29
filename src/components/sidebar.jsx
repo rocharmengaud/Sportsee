@@ -7,6 +7,12 @@ import { WeightIcon } from '../assets/weightIcon';
 
 import '../styles/sidebar.css';
 
+/**
+ * Function that displays the sidebar
+ *
+ * @return {React.ReactElement} A React component.
+ */
+
 export default function Sidebar() {
   return (
     <nav className="sidebar-container">

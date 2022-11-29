@@ -3,6 +3,12 @@ import React from 'react';
 import logo from '../assets/sportsee-logo.png';
 import '../styles/navbar.css';
 
+/**
+ * Function that displays the navbar
+ *
+ * @return {React.ReactElement} A React component.
+ */
+
 export default function Navbar() {
   return (
     <div className="navbar-container">

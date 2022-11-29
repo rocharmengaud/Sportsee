@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 
 import '../styles/profile.css';
 
+/**
+ * Function that displays the name of the user at the top of the page
+ *
+ * @prop {object} firstName name of the user
+ *
+ * @return  {React.ReactElement} A React component.
+ */
+
 export const Profile = (props) => {
   console.log(props);
   return (
