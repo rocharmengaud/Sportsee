@@ -1,8 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar } from 'recharts';
+import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar, Tooltip } from 'recharts';
 
 import '../styles/barStats.css';
+
+/**
+ * Function that displays the the bar styled chart from ReChart
+ *
+ * @prop {object} props - object containing sessions data
+ *
+ * @return  {React.ReactElement} A React component.
+ */
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload) {
+    return (
+      <div className="tooltip">
+        <p className="label">{`${payload[0].value}kg`}</p>
+        <p className="label">{`${payload[1].value}Kcal`}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
 export const BarStats = (props) => {
   console.log(props);
@@ -44,6 +64,7 @@ export const BarStats = (props) => {
             wrapperStyle={{ top: 0, right: 20 }}
             formatter={(value, entry, index) => <span className="text-color-class">{value}</span>}
           />
+          <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: 'none' }} />
           <Bar dataKey="kilogram" fill="#282D30" borderRadius="20" barSize={10} radius={[10, 10, 0, 0]} name="Poids (kg)" />
           <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[10, 10, 0, 0]} name="Calories brûlées (kCal)" />
         </BarChart>

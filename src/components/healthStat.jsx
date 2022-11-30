@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import '../styles/healthStat.css';
 
@@ -16,4 +16,8 @@ export const HealthStat = (props) => {
   );
 };
 
-// HealthStat.propTypes = {};
+HealthStat.propTypes = {
+  icon: PropTypes.object.isRequired,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
