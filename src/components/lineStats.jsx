@@ -1,6 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer, LineChart, XAxis, YAxis, Line } from 'recharts';
+import { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
+
+const CustomTooltip = ({ payload, active }) => {
+  if (active) {
+    return (
+      <div className="tooltip">
+        <p>{`${payload[0].value} min`}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
 export const LineStats = (props) => {
   console.log(props);
@@ -30,6 +41,17 @@ export const LineStats = (props) => {
         />
         <YAxis hide padding={{ top: 70, bottom: 20 }} />
         <XAxis dataKey="day" axisLine={false} tickLine={false} padding={{ right: 20, left: 20 }} stroke={'#fff'} interval={'preserveStartEnd'} />
+        <Tooltip
+          wrapperStyle={{
+            background: '#FFF',
+            color: '#000',
+            width: '55px',
+            height: '20px',
+            outline: 'none',
+          }}
+          labelStyle={{ display: 'none', border: 'none' }}
+          content={<CustomTooltip />}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

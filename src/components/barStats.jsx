@@ -5,14 +5,13 @@ import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar
 import '../styles/barStats.css';
 
 /**
- * Function that displays the the bar styled chart from ReChart
- *
- * @prop {object} props - object containing sessions data
- *
- * @return  {React.ReactElement} A React component.
+ * If the tooltip is active and there is data to display, then display the data.
+ * @prop {Boolean} active if the component is active or not (mouse over)
+ * @prop {ArrayOfObject} payload Properties of each chart Bar
  */
 
 const CustomTooltip = ({ active, payload }) => {
+  // console.log(active, payload);
   if (active && payload) {
     return (
       <div className="tooltip">
@@ -24,6 +23,13 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+/**
+ * Function that displays the the bar styled chart from ReChart
+ *
+ * @prop {object} props - object containing sessions data
+ *
+ * @return  {React.ReactElement} A React component.
+ */
 export const BarStats = (props) => {
   console.log(props);
   const data = props.sessions.map((session, index) => ({
@@ -64,7 +70,23 @@ export const BarStats = (props) => {
             wrapperStyle={{ top: 0, right: 20 }}
             formatter={(value, entry, index) => <span className="text-color-class">{value}</span>}
           />
-          <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: 'none' }} />
+          <Tooltip
+            content={<CustomTooltip />}
+            labelStyle={{
+              display: 'none',
+            }}
+            wrapperStyle={{
+              color: '#FFF',
+              background: 'red',
+              border: 'none',
+              outline: 'none',
+              width: '60px',
+              height: '50px',
+              textAlign: 'center',
+              lineHeight: '1.5',
+            }}
+            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          />
           <Bar dataKey="kilogram" fill="#282D30" borderRadius="20" barSize={10} radius={[10, 10, 0, 0]} name="Poids (kg)" />
           <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[10, 10, 0, 0]} name="Calories brûlées (kCal)" />
         </BarChart>
@@ -73,9 +95,10 @@ export const BarStats = (props) => {
   );
 };
 
-// CustomTooltip.propTypes = {
-//   sessions: PropTypes.object,
-// }
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(PropTypes.any),
+};
 
 // Utilisation des propTypes
 BarStats.propTypes = {
