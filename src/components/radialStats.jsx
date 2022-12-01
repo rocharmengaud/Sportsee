@@ -16,10 +16,10 @@ export const RadialStats = (props) => {
 
   return (
     <div className="radialchart">
-      <h3 className="radialchart__title">Score</h3>
-      <div className="radialchart__bloc-score">
-        <p className="radialchart__bloc-score__score">{props.score * 100}% </p>
-        <span className="radialchart__bloc-score__text">de votre objectif</span>
+      <h3 className="radialchart-title">Score</h3>
+      <div className="radialchart-bloc-score">
+        <p className="radialchart-score">{props.score * 100}% </p>
+        <span className="radialchart-text">de votre objectif</span>
       </div>
       <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <RadialBarChart

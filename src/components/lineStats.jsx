@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
 
+/**
+ * If the tooltip is active and there is data to display, then display the data.
+ * @prop {Boolean} active if the component is active or not (mouse over)
+ * @prop {ArrayOfObject} payload Properties of each chart Bar
+ */
 const CustomTooltip = ({ payload, active }) => {
+  // console.log(active, payload);
   if (active) {
     return (
       <div className="tooltip">
@@ -12,6 +18,14 @@ const CustomTooltip = ({ payload, active }) => {
   }
   return null;
 };
+
+/**
+ * Function that displays the the line styled chart from ReChart
+ *
+ * @prop {object} props - object containing sessions data
+ *
+ * @return  {React.ReactElement} A React component.
+ */
 
 export const LineStats = (props) => {
   console.log(props);
@@ -55,6 +69,11 @@ export const LineStats = (props) => {
       </LineChart>
     </ResponsiveContainer>
   );
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(PropTypes.any),
 };
 
 LineStats.propTypes = {

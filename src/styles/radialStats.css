@@ -7,7 +7,7 @@
   min-width: 210px;
 }
 
-.radialchart__title {
+.radialchart-title {
   margin: 0;
   padding: 1rem 0 0 1rem;
   position: absolute;
@@ -16,9 +16,9 @@
   font-weight: 800;
 }
 
-.radialchart__bloc-score {
-  width: 160px;
-  height: 160px;
+.radialchart-bloc-score {
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   background: #fff;
   position: absolute;
@@ -31,7 +31,9 @@
   align-items: center;
 }
 
-.radialchart__score {
+.radialchart-score {
+  font-size: 26px;
+  font-weight: bold;
   color: #282d30;
   font-weight: bold;
   font-size: 26px;
@@ -39,10 +41,11 @@
   margin: 0;
 }
 
-.radialchart__text {
-  display: block;
-  text-align: center;
-  font-weight: bold;
+.radialchart-text {
+  /* forcing a br with 50% width */
   width: 50%;
+  text-align: center;
+
+  font-size: 18px;
   color: #74798c;
 }

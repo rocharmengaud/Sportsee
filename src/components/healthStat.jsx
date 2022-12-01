@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 
 import '../styles/healthStat.css';
 
+/**
+ * Function that displays 1 icon and two statistics
+ *
+ * @prop {object} props - object containing 2 values and 1 icon
+ *
+ * @return  {React.ReactElement} A React component.
+ */
+
 export const HealthStat = (props) => {
   console.log(props);
   return (
