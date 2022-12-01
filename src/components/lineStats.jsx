@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
 
+import '../styles/lineStats.css';
+
 /**
  * If the tooltip is active and there is data to display, then display the data.
  * @prop {Boolean} active if the component is active or not (mouse over)
@@ -37,37 +39,35 @@ export const LineStats = (props) => {
   }));
 
   return (
-    <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
-      <LineChart data={data} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
-        <text x={120} y={30} fill="black" textAnchor="middle" dominantBaseline="central">
-          <tspan fontSize="16" fontWeight={800}>
-            Durée moyenne des sessions
-          </tspan>
-        </text>
-        <Line
-          type="natural"
-          dataKey="sessionLength"
-          dot={false}
-          activeDot={{ stroke: 'red', strokeWidth: 2, r: 3 }}
-          unit={'min'}
-          stroke={'#FFF'}
-          strokeWidth={2}
-        />
-        <YAxis hide padding={{ top: 70, bottom: 20 }} />
-        <XAxis dataKey="day" axisLine={false} tickLine={false} padding={{ right: 20, left: 20 }} stroke={'#fff'} interval={'preserveStartEnd'} />
-        <Tooltip
-          wrapperStyle={{
-            background: '#FFF',
-            color: '#000',
-            width: '55px',
-            height: '20px',
-            outline: 'none',
-          }}
-          labelStyle={{ display: 'none', border: 'none' }}
-          content={<CustomTooltip />}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="linestats">
+      <tspan className="linestats-title">Durée moyenne des sessions</tspan>
+      <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+        <LineChart data={data} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
+          <Line
+            type="natural"
+            dataKey="sessionLength"
+            dot={false}
+            activeDot={{ stroke: 'red', strokeWidth: 2, r: 3 }}
+            unit={'min'}
+            stroke={'#FFF'}
+            strokeWidth={2}
+          />
+          <YAxis hide padding={{ top: 70, bottom: 20 }} />
+          <XAxis dataKey="day" axisLine={false} tickLine={false} padding={{ right: 20, left: 20 }} stroke={'#fff'} interval={'preserveStartEnd'} />
+          <Tooltip
+            wrapperStyle={{
+              background: '#FFF',
+              color: '#000',
+              width: '55px',
+              height: '20px',
+              outline: 'none',
+            }}
+            labelStyle={{ display: 'none', border: 'none' }}
+            content={<CustomTooltip />}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
