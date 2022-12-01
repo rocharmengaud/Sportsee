@@ -26,7 +26,7 @@ const CustomTooltip = ({ active, payload }) => {
 /**
  * Function that displays the the bar styled chart from ReChart
  *
- * @prop {object} props - object containing sessions data
+ * @prop {Object} props - object containing sessions data
  *
  * @return  {React.ReactElement} A React component.
  */

@@ -22,7 +22,7 @@ const CustomTooltip = ({ payload, active }) => {
 /**
  * Function that displays the the line styled chart from ReChart
  *
- * @prop {object} props - object containing sessions data
+ * @prop {Object} props - object containing sessions data
  *
  * @return  {React.ReactElement} A React component.
  */

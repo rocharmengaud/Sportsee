@@ -2,10 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 
+/**
+ * Function that displays the the line styled chart from ReChart
+ *
+ * @prop {Array} props - array containing 6 objects
+ *
+ * @return  {React.ReactElement} A React component.
+ */
+
 export const RadarStats = (props) => {
   console.log(props);
   const label = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
-
   const data = props.data.map((data, index) => ({
     label: label[index],
     value: data.value,

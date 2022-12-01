@@ -4,6 +4,14 @@ import { ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts';
 
 import '../styles/radialStats.css';
 
+/**
+ * Function that displays the the line styled chart from ReChart
+ *
+ * @prop {Object} props - Object containing a single key:value
+ *
+ * @return  {React.ReactElement} A React component.
+ */
+
 export const RadialStats = (props) => {
   console.log(props);
   const data = [
