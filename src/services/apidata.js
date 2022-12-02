@@ -1,3 +1,4 @@
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../mock/mockedData';
 class UserData {
   constructor(userInfos, score, todayScore, keyData) {
     this.userInfos = userInfos;
@@ -35,6 +36,13 @@ export const getUserData = async (id) => {
   // ici il faut retourner une classe
   return new UserData(data.userInfos, data.score, data.todayScore, data.keyData);
   // return data;
+};
+
+export const getMockedUserData = (id) => {
+  const data = USER_MAIN_DATA.find((userData, index) => {
+    return userData.id === parseInt(id);
+  });
+  return new UserData(data.userInfos, data.score, data.todayScore, data.keyData);
 };
 
 class UserActivity {

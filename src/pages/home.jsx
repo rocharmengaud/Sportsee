@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserData } from '../services/apidata';
+import { getUserData /*getMockedUserData*/ } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
@@ -34,6 +34,8 @@ export default function Home() {
     getUserData(id)
       .then((data) => setUserData(data))
       .catch(setError);
+    // const mockedUserData = getMockedUserData(id);
+    // setUserData(mockedUserData);
   }, [id]);
 
   console.log(userData);
