@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { getUserActivity } from '../services/apidata';
+import { useParams } from 'react-router-dom';
+
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar, Tooltip } from 'recharts';
 
 import '../styles/barStats.css';
+import { Loader } from './loader';
 
 /**
  * If the tooltip is active and there is data to display, then display the data.
@@ -26,26 +30,41 @@ const CustomTooltip = ({ active, payload }) => {
 /**
  * Function that displays the the bar styled chart from ReChart
  *
- * @prop {Object} props - object containing sessions data
+ * @prop {Object} props - object containing sessions array
  *
  * @return  {React.ReactElement} A React component.
  */
-export const BarStats = (props) => {
-  console.log(props);
-  const data = props.sessions.map((session, index) => ({
-    id: index + 1,
-    kilogram: session.kilogram,
-    calories: session.calories,
-    // ...session,
-  }));
+export const BarStats = () => {
+  const { id } = useParams();
 
-  return (
+  const [userActivity, setUserActivity] = useState();
+  const [error, setError] = useState();
+
+  React.useEffect(() => {
+    getUserActivity(id)
+      .then((data) => setUserActivity(data))
+      .catch(setError);
+  }, [id]);
+
+  const dataActivity = () =>
+    userActivity.sessions.map((session, index) => ({
+      id: index + 1,
+      kilogram: session.kilogram,
+      calories: session.calories,
+      // ...session,
+    }));
+
+  if (error) {
+    return <div>pas de user activity</div>;
+  }
+
+  return userActivity ? (
     <div className="barstats-container">
       <ResponsiveContainer width="100%" height={320}>
         <BarChart
           width={60}
           height={300}
-          data={data}
+          data={dataActivity()}
           margin={{
             top: 0,
             right: 0,
@@ -85,6 +104,8 @@ export const BarStats = (props) => {
         </BarChart>
       </ResponsiveContainer>
     </div>
+  ) : (
+    <Loader />
   );
 };
 

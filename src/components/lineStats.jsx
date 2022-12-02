@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { getUserSessions } from '../services/apidata';
+import { useParams } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip } from 'recharts';
 
+import { Loader } from './loader';
 import '../styles/lineStats.css';
 
 /**
@@ -29,20 +33,34 @@ const CustomTooltip = ({ payload, active }) => {
  * @return  {React.ReactElement} A React component.
  */
 
-export const LineStats = (props) => {
-  console.log(props);
+export const LineStats = () => {
+  const { id } = useParams();
+  const [userSessions, setUserSessions] = useState();
+  const [error, setError] = useState();
+
+  React.useEffect(() => {
+    getUserSessions(id)
+      .then((data) => setUserSessions(data))
+      .catch(setError);
+  }, [id]);
+
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-  const data = props.sessions.map((session, index) => ({
-    day: days[index],
-    sessionLength: session.sessionLength,
-  }));
+  const dataSessions = () =>
+    userSessions.sessions.map((session, index) => ({
+      day: days[index],
+      sessionLength: session.sessionLength,
+    }));
 
-  return (
+  if (error) {
+    return <div>pas de user sessions</div>;
+  }
+
+  return userSessions ? (
     <div className="linestats">
       <span className="linestats-title">Durée moyenne des sessions</span>
       <ResponsiveContainer width={258} height="100%" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
-        <LineChart data={data} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
+        <LineChart data={dataSessions()} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
           <Line
             type="natural"
             dataKey="sessionLength"
@@ -69,6 +87,8 @@ export const LineStats = (props) => {
         </LineChart>
       </ResponsiveContainer>
     </div>
+  ) : (
+    <Loader />
   );
 };
 

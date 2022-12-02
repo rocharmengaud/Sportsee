@@ -23,28 +23,44 @@ export const HealthStats = (props) => {
       value: props.keyData.calorieCount,
       label: 'Calories',
       icon: <FireIcon />,
+      backgroundColor: '#FF00001A',
     },
     {
       value: props.keyData.proteinCount,
       label: 'Proteines',
       icon: <ChickenIcon />,
+      backgroundColor: '#4AB8FF1A',
     },
     {
       value: props.keyData.carbohydrateCount,
       label: 'Glucides',
       icon: <AppleIcon />,
+      backgroundColor: '#F9CE231A',
     },
     {
       value: props.keyData.lipidCount,
       label: 'Lipides',
       icon: <BurgerIcon />,
+      backgroundColor: '#FD51811A',
     },
   ];
   return healthStats.map((healthStat, index) => {
     return healthStat.label === 'Calories' ? (
-      <HealthStat value={healthStat.value + ' kCal'} label={healthStat.label} icon={healthStat.icon} key={index} />
+      <HealthStat
+        value={healthStat.value + ' kCal'}
+        label={healthStat.label}
+        icon={healthStat.icon}
+        key={index}
+        backgroundColor={healthStat.backgroundColor}
+      />
     ) : (
-      <HealthStat value={healthStat.value + ' g'} label={healthStat.label} icon={healthStat.icon} key={index} />
+      <HealthStat
+        value={healthStat.value + ' g'}
+        label={healthStat.label}
+        icon={healthStat.icon}
+        key={index}
+        backgroundColor={healthStat.backgroundColor}
+      />
     );
   });
 };

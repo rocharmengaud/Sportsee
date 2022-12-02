@@ -7,7 +7,7 @@ import '../styles/radialStats.css';
 /**
  * Function that displays the the line styled chart from ReChart
  *
- * @prop {Object} props - Object containing a single key:value
+ * @prop {Object} props - Object containing a score which is a number
  *
  * @return  {React.ReactElement} A React component.
  */
@@ -49,5 +49,5 @@ export const RadialStats = (props) => {
 };
 
 RadialStats.propTypes = {
-  score: PropTypes.oneOfType([PropTypes.number.isRequired]),
+  score: PropTypes.number.isRequired,
 };
