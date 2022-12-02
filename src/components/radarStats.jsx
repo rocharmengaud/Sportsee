@@ -21,7 +21,7 @@ export const RadarStats = (props) => {
   console.log(data.value);
   return (
     <div className="radarchart">
-      <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+      <ResponsiveContainer width={258} height="100%" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <RadarChart style={{ background: 'black', borderRadius: '10px' }} outerRadius={75} data={data}>
           <PolarGrid />
           <PolarAngleAxis dataKey="label" style={{ color: '#fff' }} stroke={'#fff'} tickLine={false} fontSize={13} />

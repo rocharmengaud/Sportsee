@@ -29,7 +29,7 @@ export const RadialStats = (props) => {
         <p className="radialchart-score">{props.score * 100}% </p>
         <span className="radialchart-text">de votre objectif</span>
       </div>
-      <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+      <ResponsiveContainer width={258} height="100%" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <RadialBarChart
           cx="50%"
           cy="50%"

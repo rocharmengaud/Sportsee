@@ -41,7 +41,7 @@ export const BarStats = (props) => {
 
   return (
     <div className="barstats-container">
-      <ResponsiveContainer width={835} height={320}>
+      <ResponsiveContainer width="100%" height={320}>
         <BarChart
           width={60}
           height={300}
@@ -71,21 +71,14 @@ export const BarStats = (props) => {
             formatter={(value, entry, index) => <span className="text-color-class">{value}</span>}
           />
           <Tooltip
-            content={<CustomTooltip />}
-            labelStyle={{
-              display: 'none',
-            }}
             wrapperStyle={{
               color: '#FFF',
               background: 'red',
-              border: 'none',
               outline: 'none',
               width: '60px',
-              height: '50px',
-              textAlign: 'center',
-              lineHeight: '1.5',
+              height: '80px',
             }}
-            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            content={<CustomTooltip />}
           />
           <Bar dataKey="kilogram" fill="#282D30" borderRadius="20" barSize={10} radius={[10, 10, 0, 0]} name="Poids (kg)" />
           <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[10, 10, 0, 0]} name="Calories brûlées (kCal)" />

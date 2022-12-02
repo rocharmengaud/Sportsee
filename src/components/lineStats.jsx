@@ -41,7 +41,7 @@ export const LineStats = (props) => {
   return (
     <div className="linestats">
       <span className="linestats-title">Durée moyenne des sessions</span>
-      <ResponsiveContainer width={258} height={263} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+      <ResponsiveContainer width={258} height="100%" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <LineChart data={data} style={{ background: 'red', borderRadius: '10px' }} margin={{ top: 0, right: 0, bottom: 10, left: 0 }}>
           <Line
             type="natural"
