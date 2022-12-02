@@ -57,12 +57,13 @@ export const LineStats = (props) => {
           <Tooltip
             wrapperStyle={{
               background: '#FFF',
-              color: '#000',
-              width: '55px',
-              height: '20px',
+              width: '60px',
+              height: '30px',
               outline: 'none',
             }}
-            labelStyle={{ display: 'none', border: 'none' }}
+            cursor={{
+              strokeOpacity: 0,
+            }}
             content={<CustomTooltip />}
           />
         </LineChart>

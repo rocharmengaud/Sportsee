@@ -17,3 +17,12 @@
   font-weight: 800;
   z-index: 10;
 }
+
+.tooltip {
+  font-weight: bold;
+  font-size: 13px;
+  /* forcer le texte centré sans utiliser de flexbox */
+  line-height: 30px;
+  margin: 0;
+  text-align: center;
+}
