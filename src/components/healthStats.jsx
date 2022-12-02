@@ -45,17 +45,10 @@ export const HealthStats = (props) => {
     },
   ];
   return healthStats.map((healthStat, index) => {
-    return healthStat.label === 'Calories' ? (
+    return (
       <HealthStat
-        value={healthStat.value + ' kCal'}
-        label={healthStat.label}
-        icon={healthStat.icon}
-        key={index}
-        backgroundColor={healthStat.backgroundColor}
-      />
-    ) : (
-      <HealthStat
-        value={healthStat.value + ' g'}
+        // les parantheses ici fonctionnent comme la priorité en mathématiques
+        value={healthStat.value + (healthStat.label === 'Calories' ? 'kCal' : 'g')}
         label={healthStat.label}
         icon={healthStat.icon}
         key={index}

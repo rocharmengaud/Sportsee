@@ -1,4 +1,4 @@
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../mock/mockedData';
+import { USER_MAIN_DATA /*USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE*/ } from '../mock/mockedData';
 class UserData {
   constructor(userInfos, score, todayScore, keyData) {
     this.userInfos = userInfos;
