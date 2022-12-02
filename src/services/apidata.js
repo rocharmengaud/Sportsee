@@ -20,6 +20,14 @@ class UserData {
   }
 }
 
+/**
+ * Takes one id as an argument, and returns a new instance of UserData class
+ *
+ * @param {Number} id The user id
+ *
+ * @return {Class} Returns user datas
+ */
+
 export const getUserData = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
   const response = await fetch(`http://localhost:3001/user/${id}`);
@@ -38,6 +46,14 @@ class UserActivity {
   }
 }
 
+/**
+ * Takes one id as an argument, and returns a new instance of UserActivity class
+ *
+ * @param {Number} id The user id
+ *
+ * @return {Class} Returns user activity
+ */
+
 export const getUserActivity = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
   const response = await fetch(`http://localhost:3001/user/${id}/activity`);
@@ -54,6 +70,14 @@ class UserSessions {
     return this.sessions;
   }
 }
+
+/**
+ * Takes one id as an argument, and returns a new instance of UserSessions class
+ *
+ * @param {Number} id The user id
+ *
+ * @return {Class} Returns user sessions
+ */
 
 export const getUserSessions = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
@@ -79,6 +103,14 @@ class UserPerformance {
     return this.data;
   }
 }
+
+/**
+ * Takes one id as an argument, and returns a new instance of UserPerformance class
+ *
+ * @param {Number} id The user id
+ *
+ * @return {Class} Returns user performance
+ */
 
 export const getUserPerformance = async (id) => {
   // le await ici force le fetch à attendre que la promesse sois terminée
