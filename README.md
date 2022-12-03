@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Comment lancer le projet
+
+Tout d'abord, il faudra créer un dossier contenant le back-end et le front-end nécessaire au fonctionnement de ce projet.
+Vous pouvez aller récuperer le back-end à [cette adresse](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+Une fois le back-end cloné, vous pouvez alors récuperer le front-end en clonant ce repository.
+Votre dossier racine contient alors le back end et le front end, il suffit maintenant de lancer un npm-start sur le back suivi du front.
+L'url du site sera alors : http://localhost:3000/user/12
+N'oubliez pas de remplacer le port du back-end et de choisir l'utilisateur 12 ou 18 a la fin de l'url.
 
 ## Available Scripts
 
