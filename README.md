@@ -14,6 +14,10 @@ Votre dossier racine contient alors le back end et le front end, il suffit maint
 L'url du site sera alors : http://localhost:3000/user/12
 N'oubliez pas de remplacer le port du back-end et de choisir l'utilisateur 12 ou 18 a la fin de l'url.
 
+A noter que ce projet peut fonctionner uniquement avec le front-end étant donné qu'il contient des datas mocked simulant le back-end.
+Le mocking des datas est présent sur chacun des composant ayant besoin de faire appel à services/apidata.js.
+Il suffit de décommenter les lignes nécéssaires sur les composants en question.
+
 ## Available Scripts
 
 In the project directory, you can run:
