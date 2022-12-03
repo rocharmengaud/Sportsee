@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserSessions } from '../services/apidata';
+import { getUserSessions /*getMockedUserSessions*/ } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
@@ -42,6 +42,8 @@ export const LineStats = () => {
     getUserSessions(id)
       .then((data) => setUserSessions(data))
       .catch(setError);
+    // const mockedUserSessions = getMockedUserSessions(id);
+    // setUserSessions(mockedUserSessions);
   }, [id]);
 
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];

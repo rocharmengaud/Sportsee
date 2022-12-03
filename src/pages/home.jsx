@@ -47,32 +47,34 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      {/* on demande si les data sont defined avec un ternaire*/}
-      {userData ? (
+      <div className="flex-content">
+        <Sidebar />
         <div className="home-container">
-          <div className="home-items">
-            <Profile firstName={userData.getUserInfos().firstName} />
-            <div className="allstats-container">
-              <div className="charts-container">
-                <div className="charts">
-                  <BarStats />
-                  <div className="triplestats-container">
-                    <LineStats />
-                    <RadarStats />
-                    <RadialStats score={userData.getTodayScore()} />
+          {/* on demande si les data sont defined avec un ternaire*/}
+          {userData ? (
+            <div className="home-items">
+              <Profile firstName={userData.getUserInfos().firstName} />
+              <div className="allstats-container">
+                <div className="charts-container">
+                  <div className="charts">
+                    <BarStats />
+                    <div className="triplestats-container">
+                      <LineStats />
+                      <RadarStats />
+                      <RadialStats score={userData.getTodayScore()} />
+                    </div>
                   </div>
-                </div>
-                <div className="healthstats-container">
-                  <HealthStats keyData={userData.getKeyData()} />
+                  <div className="healthstats-container">
+                    <HealthStats keyData={userData.getKeyData()} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <Loader />
+          )}
         </div>
-      ) : (
-        <Loader />
-      )}
+      </div>
     </>
   );
 }

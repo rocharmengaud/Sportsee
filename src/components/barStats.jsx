@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { getUserActivity } from '../services/apidata';
+import { getUserActivity /*getMockedUserActivity*/ } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar, Tooltip } from 'recharts';
@@ -30,8 +30,6 @@ const CustomTooltip = ({ active, payload }) => {
 /**
  * Function that displays the the bar styled chart from ReChart
  *
- * @prop {Object} props - object containing sessions array
- *
  * @return  {React.ReactElement} A React component.
  */
 export const BarStats = () => {
@@ -44,6 +42,8 @@ export const BarStats = () => {
     getUserActivity(id)
       .then((data) => setUserActivity(data))
       .catch(setError);
+    // const mockedUserActivity = getMockedUserActivity(id);
+    // setUserActivity(mockedUserActivity);
   }, [id]);
 
   const dataActivity = () =>

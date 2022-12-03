@@ -1,4 +1,4 @@
-import { USER_MAIN_DATA /*USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE*/ } from '../mock/mockedData';
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../mock/mockedData';
 class UserData {
   constructor(userInfos, score, todayScore, keyData) {
     this.userInfos = userInfos;
@@ -12,8 +12,8 @@ class UserData {
   getTodayScore() {
     // Opérateur de coalescence des nuls :
     // Si this.score est defined, ça le return, sinon ça return this.todayScore
-    // utilisé pour le radialStats.jsx
-    // ne pas confondre avec ternaire
+    // utilisé pour le composant radialStats.jsx
+    // ne pas confondre avec un ternaire !
     return this.score ?? this.todayScore;
   }
   getKeyData() {
@@ -70,6 +70,13 @@ export const getUserActivity = async (id) => {
   // return data;
 };
 
+export const getMockedUserActivity = (id) => {
+  const data = USER_ACTIVITY.find((userActivity, index) => {
+    return userActivity.userId === parseInt(id);
+  });
+  return new UserActivity(data.sessions);
+};
+
 class UserSessions {
   constructor(sessions) {
     this.sessions = sessions;
@@ -93,6 +100,13 @@ export const getUserSessions = async (id) => {
   const { data } = await response.json();
   return new UserSessions(data.sessions);
   // return data;
+};
+
+export const getMockedUserSessions = (id) => {
+  const data = USER_AVERAGE_SESSIONS.find((userSession, index) => {
+    return userSession.userId === parseInt(id);
+  });
+  return new UserSessions(data.sessions);
 };
 
 class UserPerformance {
@@ -126,4 +140,11 @@ export const getUserPerformance = async (id) => {
   const { data } = await response.json();
   return new UserPerformance(data.userId, data.kind, data.data);
   // return data;
+};
+
+export const getMockedPerformance = (id) => {
+  const data = USER_PERFORMANCE.find((userPerformance, index) => {
+    return userPerformance.userId === parseInt(id);
+  });
+  return new UserPerformance(data.userId, data.kind, data.data);
 };

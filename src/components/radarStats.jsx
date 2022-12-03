@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserPerformance } from '../services/apidata';
+import { getUserPerformance /*getMockedPerformance*/ } from '../services/apidata';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
@@ -22,6 +22,8 @@ export const RadarStats = () => {
     getUserPerformance(id)
       .then((data) => setUserPerformance(data))
       .catch(setError);
+    // const mockedUserPerformance = getMockedPerformance(id);
+    // setUserPerformance(mockedUserSessions);
   }, [id]);
 
   const label = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
