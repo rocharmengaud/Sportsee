@@ -13,7 +13,6 @@ import '../styles/radialStats.css';
  */
 
 export const RadialStats = (props) => {
-  console.log(props);
   const data = [
     {
       score: props.score,

@@ -38,8 +38,6 @@ export default function Home() {
     // setUserData(mockedUserData);
   }, [id]);
 
-  console.log(userData);
-
   if (error) {
     return <div>pas de user data</div>;
   }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { getUserPerformance /*getMockedPerformance*/ } from '../services/apidata';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 import { Loader } from './loader';
 
@@ -49,13 +48,4 @@ export const RadarStats = () => {
   ) : (
     <Loader />
   );
-};
-
-RadarStats.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      kind: PropTypes.number.isRequired,
-    })
-  ),
 };

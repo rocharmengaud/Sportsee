@@ -12,7 +12,6 @@ import '../styles/healthStat.css';
  */
 
 export const HealthStat = (props) => {
-  console.log(props);
   return (
     <div className="healthstats">
       <div className="stats-icon" style={{ backgroundColor: props.backgroundColor }}>

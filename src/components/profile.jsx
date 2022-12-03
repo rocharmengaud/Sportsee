@@ -12,7 +12,6 @@ import '../styles/profile.css';
  */
 
 export const Profile = (props) => {
-  console.log(props);
   return (
     <>
       <div className="profile-container">

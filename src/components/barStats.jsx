@@ -114,13 +114,13 @@ CustomTooltip.propTypes = {
   payload: PropTypes.arrayOf(PropTypes.any),
 };
 
-// Utilisation des propTypes
-BarStats.propTypes = {
-  sessions: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string.isRequired,
-      kilogram: PropTypes.number.isRequired,
-      calories: PropTypes.number.isRequired,
-    })
-  ),
-};
+// Exemple d'un proptype [{...}] utilisé quand le useState/useEffect etait sur Home.jsx
+// BarStats.propTypes = {
+//   sessions: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       day: PropTypes.string.isRequired,
+//       kilogram: PropTypes.number.isRequired,
+//       calories: PropTypes.number.isRequired,
+//     })
+//   ),
+// };

@@ -9,12 +9,11 @@ import { Loader } from './loader';
 import '../styles/lineStats.css';
 
 /**
- * If the tooltip is active and there is data to display, then display the data.
+ * If the tooltip is active and there is data to display, then display the tooltip will display corresponding data.
  * @prop {Boolean} active if the component is active or not (mouse over)
  * @prop {ArrayOfObject} payload Properties of each chart Bar
  */
 const CustomTooltip = ({ payload, active }) => {
-  // console.log(active, payload);
   if (active) {
     return (
       <div className="tooltip">
@@ -95,13 +94,4 @@ export const LineStats = () => {
 CustomTooltip.propTypes = {
   active: PropTypes.bool,
   payload: PropTypes.arrayOf(PropTypes.any),
-};
-
-LineStats.propTypes = {
-  sessions: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.number.isRequired,
-      sessionLength: PropTypes.number.isRequired,
-    })
-  ),
 };
