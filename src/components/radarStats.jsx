@@ -8,8 +8,6 @@ import { Loader } from './loader';
 /**
  * Function that displays the the line styled chart from ReChart
  *
- * @prop {Array} props - array containing 6 objects
- *
  * @return  {React.ReactElement} A React component.
  */
 
@@ -27,7 +25,7 @@ export const RadarStats = () => {
   }, [id]);
 
   const label = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
-  console.log(userPerformance);
+
   const mapData = () =>
     userPerformance.data.map((data, index) => ({
       label: label[index],
