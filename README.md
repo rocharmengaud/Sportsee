@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Prerequisites
 
-You will need a text editor likeVSCode, Vim, IntelliJ...
-Node.js >= v.16
-Git
+You will need :
+
+- A text editor
+- Node.js >= v.16
+- Git
 
 # How to clone and start the project
 
