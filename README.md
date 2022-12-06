@@ -38,4 +38,4 @@ Don't forget to replace back-end port to something else than 3000 and to choose 
 This project can work without any backend data since there is mocked datas in the front-end folder.
 You just need to uncomment some lines in the useEffect and imports on these components.
 
-For example, line 3,45,46 in barStats.jsx.
+For example, line 3,45,46 in components/barStats.jsx.
