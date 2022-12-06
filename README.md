@@ -2,55 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Comment lancer le projet
+## Prerequisites
 
-Tout d'abord, il faudra créer un dossier contenant le back-end et le front-end nécessaire au fonctionnement de ce projet.
+You will need a text editor likeVSCode, Vim, IntelliJ...
+Node.js >= v.16
+Git
 
-Vous pouvez aller récuperer le back-end à [cette adresse](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
-Une fois le back-end cloné, vous pouvez alors récuperer le front-end en clonant ce repository.
+## How to clone and start the project
 
-Votre dossier racine contient alors le back end et le front end, il suffit maintenant de lancer un npm-start sur le back suivi du front.
+First off, create a folder that will contain back and front-end that will be necessary for the project to work
 
-L'url du site sera alors : http://localhost:3000/user/12
-N'oubliez pas de remplacer le port du back-end et de choisir l'utilisateur 12 ou 18 a la fin de l'url.
+You can download the backend [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+You can now clone the front-end from this repository into the main folder.
+
+Your main folder now contains both back-end and front-end.
+Position yourself on the front-end and use npm install (or yarn).
+You can now run the project using npm start in both back and front-end folders.
+
+Website URL will be : http://localhost:3000/user/12.
+Don't forget to replace back-end port to something else than 3000 and to choose which user informations you want to see by inputting 12 or 18 in the url.
 
 A noter que ce projet peut fonctionner uniquement avec le front-end étant donné qu'il contient des datas mocked simulant le back-end.
 Le mocking des datas est présent sur chacun des composant ayant besoin de faire appel à services/apidata.js.
 Il suffit de décommenter les lignes nécéssaires sur les composants en question.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project can work without any backend data since there is mocked datas in the front-end folder.
+You just need to uncomment some lines in the useEffect and imports on these components.
