@@ -15,7 +15,8 @@ You will need :
 First off, create a folder that will contain back and front-end that will be necessary for the project to work
 
 You can download the backend [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
-You can now clone the front-end from this repository into the main folder using
+
+You can now clone the front-end from this repository into the main folder using :
 
 ```
 $ git clone
@@ -23,7 +24,7 @@ $ git clone
 
 Your main folder now contains both back-end and front-end.
 Position yourself on the front-end and use npm install (or yarn).
-You can now run the project using npm start in both back and front-end folders.
+You can now run the project using npm start in both back and front-end folders :
 
 ```
 $ cd sportsee/sportsee-front
