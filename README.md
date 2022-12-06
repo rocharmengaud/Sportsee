@@ -22,9 +22,5 @@ You can now run the project using npm start in both back and front-end folders.
 Website URL will be : http://localhost:3000/user/12.
 Don't forget to replace back-end port to something else than 3000 and to choose which user informations you want to see by inputting 12 or 18 in the url.
 
-A noter que ce projet peut fonctionner uniquement avec le front-end étant donné qu'il contient des datas mocked simulant le back-end.
-Le mocking des datas est présent sur chacun des composant ayant besoin de faire appel à services/apidata.js.
-Il suffit de décommenter les lignes nécéssaires sur les composants en question.
-
 This project can work without any backend data since there is mocked datas in the front-end folder.
 You just need to uncomment some lines in the useEffect and imports on these components.
